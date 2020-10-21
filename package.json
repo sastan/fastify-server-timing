@@ -62,5 +62,11 @@
   },
   "peerDependencies": {
     "fastify": "3.x"
-  }
+  },
+  "keywords": [
+    "fastify",
+    "fastify-plugin",
+    "plugin",
+    "server-timing"
+  ]
 }
