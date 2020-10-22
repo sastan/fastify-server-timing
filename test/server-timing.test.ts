@@ -66,7 +66,7 @@ test('add no timing', async () => {
   })
 
   expect(response.headers).not.toHaveProperty('server-timing')
-  expect(response.headers).toHaveProperty('timing-allow-origin', '*')
+  expect(response.headers).not.toHaveProperty('timing-allow-origin', '*')
 })
 
 test('add several timings', async () => {

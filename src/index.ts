@@ -18,7 +18,7 @@ declare module 'fastify' {
     /**
      * @private
      */
-    [kServerTimings]: string[]
+    [kServerTimings]: string[] | null
   }
 }
 
@@ -72,12 +72,6 @@ function serverTimingPlugin(
 ) {
   fastify.decorateReply(kServerTimings, null)
 
-  fastify.addHook('onRequest', (_request, reply, next) => {
-    reply[kServerTimings] = []
-
-    next()
-  })
-
   fastify.decorateReply('addServerTiming', function addServerTiming(
     this: FastifyReply,
     name: string,
@@ -95,17 +89,19 @@ function serverTimingPlugin(
       value += `;desc=${/[\s=;,"]/.test(description) ? JSON.stringify(description) : description}`
     }
 
-    this[kServerTimings].push(value)
+    const serverTimings = this[kServerTimings] || (this[kServerTimings] = [])
+
+    serverTimings.push(value)
   })
 
   if (header) {
     fastify.addHook('onSend', (request, reply, _payload, next) => {
-      if (!skip(request, reply)) {
+      const serverTimings = reply[kServerTimings]
+
+      if (serverTimings && !skip(request, reply)) {
         if (allowOriginHeader && allowOrigin) {
           reply.header(allowOriginHeader, allowOrigin)
         }
-
-        const serverTimings = reply[kServerTimings]
 
         if (serverTimings.length > 0) {
           reply.header(header, serverTimings.join(','))
