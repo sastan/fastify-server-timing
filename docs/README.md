@@ -1,6 +1,6 @@
 > Globals
 
-# fastify-server-timing - v1.0.2
+# fastify-server-timing - v1.0.3
 
 ## Index
 
