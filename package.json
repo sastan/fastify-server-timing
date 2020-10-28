@@ -32,6 +32,7 @@
     "trailingComma": "all"
   },
   "name": "fastify-server-timing",
+  "description": "Server-Timing API for fastify",
   "author": "Sascha Tandel",
   "homepage": "https://github.com/sastan/fastify-server-timing#readme",
   "bugs": {
