@@ -18,12 +18,12 @@ declare module 'fastify' {
 }
 
 /**
- * Adds a server timing entry to the response.
- *
  * This is available on the [FastifyReply](https://www.fastify.io/docs/latest/Reply/) as `addServerTiming`.
  */
 export interface AddServerTiming {
   /**
+   * Adds a server timing entry to the response.
+   *
    * @param name to use
    * @param duration in seconds
    * @param description to use
@@ -31,9 +31,6 @@ export interface AddServerTiming {
   (name: string, duration?: number, description?: string): void
 }
 
-/**
- * Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
- */
 export interface Skip {
   /**
    * @param request the [FastifyRequest](https://www.fastify.io/docs/latest/Request/)
@@ -75,7 +72,7 @@ export interface Options {
   allowOrigin?: string
 
   /**
-   * Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
+   * Determines if the server timings should **not** be added to the reply (default: never).
    */
   skip?: Skip
 }

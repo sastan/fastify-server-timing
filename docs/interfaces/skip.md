@@ -4,8 +4,6 @@
 
 # Interface: Skip
 
-Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
-
 ## Hierarchy
 
 * **Skip**
@@ -14,9 +12,7 @@ Determines if the Timing-Allow-Origin response header should **not** be added to
 
 ▸ (`request`: FastifyRequest, `reply`: FastifyReply): unknown
 
-*Defined in [index.ts:37](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L37)*
-
-Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
+*Defined in [index.ts:34](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L34)*
 
 #### Parameters:
 

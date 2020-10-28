@@ -4,8 +4,6 @@
 
 # Interface: AddServerTiming
 
-Adds a server timing entry to the response.
-
 This is available on the [FastifyReply](https://www.fastify.io/docs/latest/Reply/) as `addServerTiming`.
 
 ## Hierarchy
@@ -16,11 +14,9 @@ This is available on the [FastifyReply](https://www.fastify.io/docs/latest/Reply
 
 ▸ (`name`: string, `duration?`: undefined \| number, `description?`: undefined \| string): void
 
-*Defined in [index.ts:25](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L25)*
+*Defined in [index.ts:23](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L23)*
 
 Adds a server timing entry to the response.
-
-This is available on the [FastifyReply](https://www.fastify.io/docs/latest/Reply/) as `addServerTiming`.
 
 #### Parameters:
 

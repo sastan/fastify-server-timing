@@ -26,7 +26,7 @@ Options for the fastify plugin.
 
 • `Optional` **allowOrigin**: undefined \| string
 
-*Defined in [index.ts:75](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L75)*
+*Defined in [index.ts:72](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L72)*
 
 The value for the Timing-Allow-Origin response header (default: `"*"`).
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **allowOriginHeader**: undefined \| string
 
-*Defined in [index.ts:67](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L67)*
+*Defined in [index.ts:64](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L64)*
 
 The Timing-Allow-Origin response header specifies origins that are allowed to see values
 of attributes retrieved via features of the Resource Timing API, which would
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **digits**: undefined \| number
 
-*Defined in [index.ts:60](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L60)*
+*Defined in [index.ts:57](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L57)*
 
 Number of digits after the decimal point of a duration (default: `2`).
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **header**: undefined \| string
 
-*Defined in [index.ts:53](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L53)*
+*Defined in [index.ts:50](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L50)*
 
 The http header (default: `"server-timing"`)
 
@@ -73,6 +73,6 @@ ___
 
 • `Optional` **skip**: [Skip](skip.md)
 
-*Defined in [index.ts:80](https://github.com/sastan/fastify-server-timing/blob/1e49fbb/src/index.ts#L80)*
+*Defined in [index.ts:77](https://github.com/sastan/fastify-server-timing/blob/main/src/index.ts#L77)*
 
-Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
+Determines if the server timings should **not** be added to the reply (default: never).
