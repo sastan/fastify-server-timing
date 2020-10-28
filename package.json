@@ -13,9 +13,12 @@
     "start": "tsdx watch --target node",
     "build": "tsdx build --target node",
     "test": "tsdx test",
+    "test:coverage": "tsdx test --coverage",
     "lint": "tsdx lint",
+    "version": "typedoc && git add docs",
     "prepare": "tsdx build --target node",
-    "release": "np"
+    "release": "np",
+    "typedoc": "typedoc"
   },
   "husky": {
     "hooks": {
@@ -46,6 +49,8 @@
     "pino-pretty": "^4.3.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
+    "typedoc": "0.17.0-3",
+    "typedoc-plugin-markdown": "^3.0.11",
     "typescript": "^4.0.3"
   },
   "resolutions": {

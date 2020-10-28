@@ -4,7 +4,7 @@
 
 import fastify from 'fastify'
 
-function build(options?: import('../src').ServerTimingOptions) {
+function build(options?: import('../src').Options) {
   const app = fastify({
     logger: {
       level: 'warn',

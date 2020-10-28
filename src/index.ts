@@ -8,12 +8,7 @@ const kServerTimings = Symbol('fastify-server-timing')
 
 declare module 'fastify' {
   interface FastifyReply {
-    /**
-     * @param name to use
-     * @param duration in seconds
-     * @param description to use
-     */
-    addServerTiming: (name: string, duration?: number, description?: string) => void
+    addServerTiming: AddServerTiming
 
     /**
      * @private
@@ -22,7 +17,36 @@ declare module 'fastify' {
   }
 }
 
-export interface ServerTimingOptions {
+/**
+ * Adds a server timing entry to the response.
+ *
+ * This is available on the [FastifyReply](https://www.fastify.io/docs/latest/Reply/) as `addServerTiming`.
+ */
+export interface AddServerTiming {
+  /**
+   * @param name to use
+   * @param duration in seconds
+   * @param description to use
+   */
+  (name: string, duration?: number, description?: string): void
+}
+
+/**
+ * Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
+ */
+export interface Skip {
+  /**
+   * @param request the [FastifyRequest](https://www.fastify.io/docs/latest/Request/)
+   * @param reply the [FastifyReply](https://www.fastify.io/docs/latest/Reply/)
+   * @return a truthy value to prevent adding the server-timing header
+   */
+  (request: FastifyRequest, reply: FastifyReply): unknown
+}
+
+/**
+ * Options for the fastify plugin.
+ */
+export interface Options {
   /**
    * The http header (default: `"server-timing"`)
    */
@@ -53,7 +77,7 @@ export interface ServerTimingOptions {
   /**
    * Determines if the Timing-Allow-Origin response header should **not** be added to the reply (default: never).
    */
-  skip?: (request: FastifyRequest, reply: FastifyReply) => boolean
+  skip?: Skip
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing
@@ -67,7 +91,7 @@ function serverTimingPlugin(
     allowOriginHeader = 'timing-allow-origin',
     allowOrigin = '*',
     skip = never,
-  }: ServerTimingOptions,
+  }: Options,
   done: () => void,
 ) {
   fastify.decorateReply(kServerTimings, null)
