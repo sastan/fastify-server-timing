@@ -21,7 +21,7 @@ Adds a server timing entry to the response.
 Name | Type | Description |
 ------ | ------ | ------ |
 `name` | string | to use |
-`duration?` | undefined \| number | in seconds |
+`duration?` | undefined \| number | in milliseconds |
 `description?` | undefined \| string | to use  |
 
 **Returns:** void

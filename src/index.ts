@@ -25,7 +25,7 @@ export interface AddServerTiming {
    * Adds a server timing entry to the response.
    *
    * @param name to use
-   * @param duration in seconds
+   * @param duration in milliseconds
    * @param description to use
    */
   (name: string, duration?: number, description?: string): void
