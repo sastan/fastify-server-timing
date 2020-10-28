@@ -38,8 +38,8 @@ fastify.get('/', (request, reply) => {
 })
 ```
 
-- [Options](https://github.com/sastan/fastify-server-timing/blob/main/docs/interfaces/options.md)
-- [reply.addServerTiming](https://github.com/sastan/fastify-server-timing/blob/main/docs/interfaces/addservertiming.md)(`name`: string, `duration?`: undefined \| number, `description?`: undefined \| string): void
+- [Options](https://github.com/sastan/fastify-server-timing/blob/main/docs/interfaces/options.md#interface-options)
+- [reply.addServerTiming](https://github.com/sastan/fastify-server-timing/blob/main/docs/interfaces/addservertiming.md#interface-addservertiming)(`name`: string, `duration?`: undefined \| number, `description?`: undefined \| string): void
 
 ## Sponsors
 

@@ -1,5 +1,3 @@
-**[fastify-server-timing - v1.0.2](../README.md)**
-
 > [Globals](../README.md) / Skip
 
 # Interface: Skip
