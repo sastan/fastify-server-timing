@@ -1,8 +1,8 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 
-const fp = require('fastify-plugin')
+import fp from 'fastify-plugin'
 
-const { never } = require('@carv/stdlib')
+import { never } from '@carv/stdlib'
 
 const kServerTimings = Symbol('fastify-server-timing')
 
