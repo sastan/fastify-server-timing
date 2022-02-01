@@ -78,7 +78,7 @@ export interface Options {
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing
-export default fastifyPlugin(serverTimingPlugin, { name: 'server-timing', fastify: '3.x' });
+export default fastifyPlugin(serverTimingPlugin, { name: 'server-timing', fastify: '3.x' })
 
 function serverTimingPlugin(
   fastify: FastifyInstance,
