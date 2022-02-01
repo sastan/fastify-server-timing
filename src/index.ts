@@ -1,8 +1,8 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 
-const fp = require('fastify-plugin')
+import fastifyPlugin from 'fastify-plugin'
 
-const { never } = require('@carv/stdlib')
+import { never } from '@carv/stdlib'
 
 const kServerTimings = Symbol('fastify-server-timing')
 
@@ -78,7 +78,7 @@ export interface Options {
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing
-export default fp(serverTimingPlugin, { name: 'server-timing', fastify: '3.x' })
+export default fastifyPlugin(serverTimingPlugin, { name: 'server-timing', fastify: '3.x' })
 
 function serverTimingPlugin(
   fastify: FastifyInstance,
